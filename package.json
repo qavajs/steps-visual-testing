@@ -1,0 +1,36 @@
+{
+  "name": "@qavajs/steps-visual-testing",
+  "version": "0.0.1",
+  "description": "steps to perform visual testing",
+  "main": "./index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage",
+    "test:e2e": "ts-node node_modules/.bin/qavajs run --config test-e2e/visual.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qavajs/steps-visual-testing.git"
+  },
+  "authors": [
+    "Alexandr Galichenko"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qavajs/steps-visual-testing/issues"
+  },
+  "homepage": "https://github.com/qavajs/steps-visual-testing#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^8.2.2",
+    "@qavajs/cli": "^0.0.9",
+    "@qavajs/xunit-formatter": "^0.0.2",
+    "@types/pixelmatch": "^5.2.4",
+    "@types/pngjs": "^6.0.1",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@qavajs/memory": "^1.1.0",
+    "pixelmatch": "^5.3.0",
+    "pngjs": "^6.0.0"
+  }
+}
