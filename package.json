@@ -13,7 +13,8 @@
     "url": "git+https://github.com/qavajs/steps-visual-testing.git"
   },
   "authors": [
-    "Alexandr Galichenko"
+    "Alexandr Galichenko",
+    "Alexandr Legchilov"
   ],
   "license": "MIT",
   "bugs": {
