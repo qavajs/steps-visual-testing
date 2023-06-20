@@ -26,6 +26,8 @@ When(
             { threshold: 0.1 }
         );
         if (delta > 0) {
+            this.attach(actualScreenshot, 'base64:image/png');
+            this.attach(expectedScreenshot, 'base64:image/png');
             this.attach(PNG.sync.write(diff).toString('base64'), 'base64:image/png');
             throw new Error('Images are not equal');
         }
