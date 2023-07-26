@@ -9,4 +9,3 @@ Feature: compare screenshots
       | threshold | 0.99 |
     Then I expect '$actualError' screenshot to equal '$expectedBuffer':
       | threshold | 0.99 |
-

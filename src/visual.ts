@@ -26,8 +26,8 @@ async function compare(
         { threshold }
     );
     if (delta > 0) {
-        world.attach(btoa(actualBuffer), 'base64:image/png');
-        world.attach(btoa(expectedBuffer), 'base64:image/png');
+        world.attach(actualBuffer.toString('base64'), 'base64:image/png');
+        world.attach(expectedBuffer.toString('base64'), 'base64:image/png');
         world.attach(PNG.sync.write(diff).toString('base64'), 'base64:image/png');
         throw new Error('Images are not equal');
     }
