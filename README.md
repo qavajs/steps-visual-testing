@@ -12,7 +12,7 @@ const Memory = require('./memory');
 module.exports = {
     default: {
         require: [
-            '@qavajs/steps-visual-testing'
+            '@qavajs/steps-visual-testing/index.js'
         ],
         memory: new Memory()
     }

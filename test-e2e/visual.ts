@@ -7,6 +7,5 @@ export default {
         '@qavajs/html-formatter:test-e2e/report.html'
     ],
     memory: new Memory(),
-    parallel: 1,
-    publishQuiet: true
+    parallel: 1
 }
