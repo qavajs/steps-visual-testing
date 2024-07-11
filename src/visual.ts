@@ -1,8 +1,7 @@
-import {DataTable, IWorld, When} from '@cucumber/cucumber';
+import { DataTable, IWorld, When } from '@cucumber/cucumber';
 import memory from '@qavajs/memory';
 import { PNG } from 'pngjs';
-import pixelmatch from 'pixelmatch';
-
+const pixelMatchModule = import('pixelmatch').then(m => m.default);
 const BASE64 = 'base64';
 const BASE64_IMAGE = 'base64:image/png';
 
@@ -12,6 +11,7 @@ async function compare(
     expected: string,
     threshold: number = 0.1
 ) {
+    const pixelmatch = await pixelMatchModule;
     const actualValue = await memory.getValue(actual);
     const expectedValue = await memory.getValue(expected);
     const actualBuffer = typeof actualValue !== "string" ? actualValue : Buffer.from(actualValue, BASE64);
@@ -31,14 +31,14 @@ async function compare(
             { threshold }
         );
     } catch (e) {
-        world.attach(actualBuffer.toString(BASE64), BASE64_IMAGE);
-        world.attach(expectedBuffer.toString(BASE64), BASE64_IMAGE);
+        world.attach(actualBuffer.toString(BASE64), { mediaType: BASE64_IMAGE, fileName: 'actual' });
+        world.attach(expectedBuffer.toString(BASE64), { mediaType: BASE64_IMAGE, fileName: 'expected' });
         throw e;
     }
     if (delta > 0) {
-        world.attach(actualBuffer.toString(BASE64), BASE64_IMAGE);
-        world.attach(expectedBuffer.toString(BASE64), BASE64_IMAGE);
-        world.attach(PNG.sync.write(diff).toString(BASE64), BASE64_IMAGE);
+        world.attach(actualBuffer.toString(BASE64), { mediaType: BASE64_IMAGE, fileName: 'actual' });
+        world.attach(expectedBuffer.toString(BASE64), { mediaType: BASE64_IMAGE, fileName: 'expected' });
+        world.attach(PNG.sync.write(diff).toString(BASE64), { mediaType: BASE64_IMAGE, fileName: 'delta' });
         throw new Error('Images are not equal');
     }
 }
