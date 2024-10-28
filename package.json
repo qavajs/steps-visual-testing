@@ -1,6 +1,6 @@
 {
   "name": "@qavajs/steps-visual-testing",
-  "version": "0.4.0",
+  "version": "2.0.0",
   "description": "steps to perform visual testing",
   "main": "./index.js",
   "scripts": {
@@ -22,10 +22,9 @@
   },
   "homepage": "https://github.com/qavajs/steps-visual-testing#readme",
   "devDependencies": {
-    "@cucumber/cucumber": "^10.8.0",
-    "@qavajs/cli": "^0.39.0",
+    "@cucumber/cucumber": "^11.0.1",
+    "@qavajs/core": "^2.0.1",
     "@qavajs/html-formatter": "^0.18.1",
-    "@qavajs/memory": "^1.7.0",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
     "ts-node": "^10.9.2"
