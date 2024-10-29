@@ -5,7 +5,7 @@ All notable changes to the "@qavajs/steps-visual-testing" will be documented in 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 ## [2.0.0]
-- :rocket: initial implementation of v2
+- :rocket: added initial implementation of v2
 
 ## [0.4.0]
 - :rocket: added named attachments
