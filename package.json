@@ -23,7 +23,7 @@
   "homepage": "https://github.com/qavajs/steps-visual-testing#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.1",
-    "@qavajs/core": "^2.0.1",
+    "@qavajs/core": "^2.0.2",
     "@qavajs/html-formatter": "^0.18.1",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
