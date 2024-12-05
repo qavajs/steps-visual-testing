@@ -1,5 +1,5 @@
 import { DataTable, IWorld, When } from '@cucumber/cucumber';
-import memory from '@qavajs/memory';
+import { type MemoryValue } from '@qavajs/core';
 import { PNG } from 'pngjs';
 const pixelMatchModule = import('pixelmatch').then(m => m.default);
 const BASE64 = 'base64';
@@ -7,13 +7,13 @@ const BASE64_IMAGE = 'base64:image/png';
 
 async function compare(
     world: IWorld,
-    actual: string,
-    expected: string,
+    actual: MemoryValue,
+    expected: MemoryValue,
     threshold: number = 0.1
 ) {
     const pixelmatch = await pixelMatchModule;
-    const actualValue = await memory.getValue(actual);
-    const expectedValue = await memory.getValue(expected);
+    const actualValue = await actual.value();
+    const expectedValue = await expected.value();
     const actualBuffer = typeof actualValue !== "string" ? actualValue : Buffer.from(actualValue, BASE64);
     const expectedBuffer = typeof expectedValue !== "string" ? expectedValue : Buffer.from(expectedValue, BASE64);
     const actualScreenshotImage = PNG.sync.read(actualBuffer);
@@ -50,8 +50,8 @@ async function compare(
  * A screenshot can either be a Buffer instance or base 64 encoded string
  * @example I expect '$actual' screenshot to equal '$expected'
  */
-When('I expect {string} screenshot to equal {string}',
-    async function (actual, expected) {
+When('I expect {value} screenshot to equal {value}',
+    async function (actual: MemoryValue, expected: MemoryValue) {
         await compare(this, actual, expected);
     }
 );
@@ -66,10 +66,10 @@ When('I expect {string} screenshot to equal {string}',
  * I expect '$actual' screenshot to equal '$expected':
  *   | threshold | 0.4 |
  */
-When('I expect {string} screenshot to equal {string}:',
-    async function (actual: string, expected: string, dataTable: DataTable) {
+When('I expect {value} screenshot to equal {value}:',
+    async function (actual: MemoryValue, expected: MemoryValue, dataTable: DataTable) {
         const [ params ] = dataTable.transpose().hashes();
-        const threshold = parseFloat(await memory.getValue(params.threshold));
+        const threshold = parseFloat(await this.getValue(params.threshold));
         await compare(this, actual, expected, threshold);
     }
 );
