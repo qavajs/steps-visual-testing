@@ -4,6 +4,15 @@ All notable changes to the "@qavajs/steps-visual-testing" will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+:rocket: - new feature  
+:beetle: - bugfix  
+:x: - deprecation/removal  
+:pencil: - chore  
+:microscope: - experimental
+
+## [unreleased]
+- :beetle: fixed publishing workflow
+
 ## [2.0.0]
 - :rocket: added initial implementation of v2
 
