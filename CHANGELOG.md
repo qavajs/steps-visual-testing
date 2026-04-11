@@ -10,6 +10,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 :pencil: - chore  
 :microscope: - experimental
 
+## [2.1.1]
+- :pencil: update publish workflows
+
 ## [2.1.0]
 - :rocket: updated pixelmatch dependency
 - :beetle: fixed publishing workflow
