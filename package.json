@@ -22,14 +22,14 @@
   },
   "homepage": "https://github.com/qavajs/steps-visual-testing#readme",
   "devDependencies": {
-    "@cucumber/cucumber": "^12.7.0",
-    "@qavajs/core": "^2.13.0",
-    "@qavajs/html-formatter": "^1.2.0",
+    "@cucumber/cucumber": "^13.3.0",
+    "@qavajs/core": "^2.18.1",
+    "@qavajs/html-formatter": "^1.4.0",
     "@types/pngjs": "^6.0.5",
     "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "pixelmatch": "^7.1.0",
+    "pixelmatch": "^8.0.0",
     "pngjs": "^7.0.0"
   }
 }

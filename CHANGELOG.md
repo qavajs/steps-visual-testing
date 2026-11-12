@@ -10,6 +10,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 :pencil: - chore  
 :microscope: - experimental
 
+## [Unreleased]
+- :rocket: updated pixelmatch to v8 (OKLab-based color difference); `threshold` is scaled to keep the 0–1 range
+- :pencil: updated dependencies
+- :rocket: descriptive failure messages (differing pixel count and percentage, image dimensions, invalid PNG input)
+- :rocket: validation of step parameters: unknown parameters and invalid values fail the step
+- :rocket: added `includeAA`, `alpha`, `aaColor`, `diffColor`, `diffColorAlt` and `diffMask` parameters
+- :rocket: added `attach` parameter to control which images are attached on failure (`all`, `diff`, `none`)
+
 ## [2.1.1]
 - :pencil: update publish workflows
 
