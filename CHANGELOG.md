@@ -10,7 +10,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 :pencil: - chore  
 :microscope: - experimental
 
-## [Unreleased]
+## [2.2.0]
 - :rocket: updated pixelmatch to v8 (OKLab-based color difference); `threshold` is scaled to keep the 0–1 range
 - :pencil: updated dependencies
 - :rocket: descriptive failure messages (differing pixel count and percentage, image dimensions, invalid PNG input)
